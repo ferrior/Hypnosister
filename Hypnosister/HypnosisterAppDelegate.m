@@ -18,9 +18,19 @@
     
    // CGRect viewFrame = CGRectMake(160, 240, 100, 150);
     
-    HypnosisView * view = [[HypnosisView alloc] initWithFrame:self.window.bounds];
-    //[view setBackgroundColor:[UIColor redColor]];
-    [[self window] addSubview:view];
+    CGRect screenRect = [[self window] bounds];
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [self.window addSubview:scrollView];
+    
+    CGRect bigRect = screenRect;
+    bigRect.size.width *=2;
+    bigRect.size.height *=2;
+    HypnosisView *view = [[HypnosisView alloc] initWithFrame:bigRect];
+    
+    [scrollView addSubview:view];
+    
+    [scrollView setContentSize:bigRect.size];
     
     BOOL succ  =  [view becomeFirstResponder];
     if(succ){
@@ -28,11 +38,7 @@
     }else{
         NSLog(@"cannot become first responder");
     }
-   // CGRect viewFrame1 = CGRectMake(20, 30, 50, 50);
-    
-   // HypnosisView * view1 = [[HypnosisView alloc] initWithFrame:viewFrame1];
-    //[view1 setBackgroundColor:[UIColor blueColor]];
-   // [view addSubview:view1];
+
     
     
     self.window.backgroundColor = [UIColor whiteColor];
