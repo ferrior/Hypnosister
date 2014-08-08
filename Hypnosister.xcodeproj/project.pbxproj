@@ -19,6 +19,7 @@
 		4A3921EC1994A4C900E387CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3921D41994A4C900E387CB /* UIKit.framework */; };
 		4A3921F41994A4C900E387CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A3921F21994A4C900E387CB /* InfoPlist.strings */; };
 		4A3921F61994A4C900E387CB /* HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3921F51994A4C900E387CB /* HypnosisterTests.m */; };
+		4AE25AF91994A9280092A361 /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE25AF81994A9280092A361 /* HypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		4A3921F11994A4C900E387CB /* HypnosisterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HypnosisterTests-Info.plist"; sourceTree = "<group>"; };
 		4A3921F31994A4C900E387CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4A3921F51994A4C900E387CB /* HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HypnosisterTests.m; sourceTree = "<group>"; };
+		4AE25AF71994A9280092A361 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
+		4AE25AF81994A9280092A361 /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				4A3921E01994A4C900E387CB /* HypnosisterAppDelegate.m */,
 				4A3921E21994A4C900E387CB /* Images.xcassets */,
 				4A3921D71994A4C900E387CB /* Supporting Files */,
+				4AE25AF71994A9280092A361 /* HypnosisView.h */,
+				4AE25AF81994A9280092A361 /* HypnosisView.m */,
 			);
 			path = Hypnosister;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			files = (
 				4A3921DD1994A4C900E387CB /* main.m in Sources */,
 				4A3921E11994A4C900E387CB /* HypnosisterAppDelegate.m in Sources */,
+				4AE25AF91994A9280092A361 /* HypnosisView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +444,7 @@
 				4A3921FB1994A4C900E387CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A3921FC1994A4C900E387CB /* Build configuration list for PBXNativeTarget "HypnosisterTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +453,7 @@
 				4A3921FE1994A4C900E387CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
