@@ -22,15 +22,22 @@
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
     [self.window addSubview:scrollView];
+    [scrollView setPagingEnabled:YES];
     
     CGRect bigRect = screenRect;
     bigRect.size.width *=2;
-    bigRect.size.height *=2;
-    HypnosisView *view = [[HypnosisView alloc] initWithFrame:bigRect];
-    
+    //bigRect.size.height *=2;
+    HypnosisView *view = [[HypnosisView alloc] initWithFrame:screenRect];
     [scrollView addSubview:view];
     
+    screenRect.origin.x = screenRect.size.width;
+    HypnosisView *view1 = [[HypnosisView alloc] initWithFrame:screenRect];
+    [scrollView addSubview:view1];
+    
     [scrollView setContentSize:bigRect.size];
+    
+
+    [scrollView setContentOffset:CGPointMake(bigRect.size.width/4, 0) animated:YES];
     
     BOOL succ  =  [view becomeFirstResponder];
     if(succ){
