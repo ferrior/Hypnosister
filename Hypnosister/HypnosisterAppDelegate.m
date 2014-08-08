@@ -7,7 +7,7 @@
 //
 
 #import "HypnosisterAppDelegate.h"
-#import "HypnosisView.h"
+
 
 @implementation HypnosisterAppDelegate
 
@@ -16,36 +16,30 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-   // CGRect viewFrame = CGRectMake(160, 240, 100, 150);
-    
     CGRect screenRect = [[self window] bounds];
-    
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
-    [self.window addSubview:scrollView];
-    [scrollView setPagingEnabled:YES];
     
     CGRect bigRect = screenRect;
-    bigRect.size.width *=2;
-    //bigRect.size.height *=2;
-    HypnosisView *view = [[HypnosisView alloc] initWithFrame:screenRect];
+
+    view = [[HypnosisView alloc] initWithFrame:screenRect];
     [scrollView addSubview:view];
     
-    screenRect.origin.x = screenRect.size.width;
-    HypnosisView *view1 = [[HypnosisView alloc] initWithFrame:screenRect];
-    [scrollView addSubview:view1];
     
+    [scrollView setDelegate:self];
+    
+    [scrollView setMinimumZoomScale:1];
+    [scrollView setMaximumZoomScale:5];
     [scrollView setContentSize:bigRect.size];
+    //[scrollView setContentOffset:CGPointMake(bigRect.size.width/4, 0) animated:YES];
+    [self.window addSubview:scrollView];
     
 
-    [scrollView setContentOffset:CGPointMake(bigRect.size.width/4, 0) animated:YES];
-    
     BOOL succ  =  [view becomeFirstResponder];
     if(succ){
         NSLog(@"became first responder");
     }else{
         NSLog(@"cannot become first responder");
     }
-
     
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -53,6 +47,9 @@
     return YES;
 }
 
+-(UIView*) viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return view;
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

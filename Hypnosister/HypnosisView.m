@@ -33,6 +33,7 @@
 }
 
 -(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    NSLog(@"motionBegan");
     if(motion ==  UIEventSubtypeMotionShake){
         NSLog(@"device started shaking1");
         [self setCircleColor:[UIColor redColor]];
