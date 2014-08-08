@@ -22,6 +22,12 @@
     //[view setBackgroundColor:[UIColor redColor]];
     [[self window] addSubview:view];
     
+    BOOL succ  =  [view becomeFirstResponder];
+    if(succ){
+        NSLog(@"became first responder");
+    }else{
+        NSLog(@"cannot become first responder");
+    }
    // CGRect viewFrame1 = CGRectMake(20, 30, 50, 50);
     
    // HypnosisView * view1 = [[HypnosisView alloc] initWithFrame:viewFrame1];
