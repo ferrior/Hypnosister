@@ -16,6 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES ];
     CGRect screenRect = [[self window] bounds];
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
     
