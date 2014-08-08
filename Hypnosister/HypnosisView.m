@@ -27,14 +27,16 @@
     center.x = bounds.origin.x + bounds.size.width/2;
     center.y = bounds.origin.y + bounds.size.height/2;
     
-    float maxRadius =  hypot(bounds.size.width,bounds.size.height)/4;
+    float maxRadius =  hypot(bounds.size.width,bounds.size.height)/2;
     
     CGContextSetLineWidth(ctx, 5);
     
     CGContextSetRGBStrokeColor(ctx, 0.6, 0.6, 0.6, 1.0);
     
-    CGContextAddArc(ctx, center.x, center.y, maxRadius, 0, M_PI * 2, YES);
+    for(float currentRadius = maxRadius; currentRadius > 0; currentRadius -=20){
+        CGContextAddArc(ctx, center.x, center.y, currentRadius, 0, M_PI * 2, YES);
     
-    CGContextStrokePath(ctx);
+        CGContextStrokePath(ctx);
+    }
 }
 @end
